@@ -25,7 +25,8 @@ solution-sprint/
     ├── research.md        # 情報源・現場理解のメモ
     ├── decision.md        # 冒頭にPR-FAQ 5行 → 何を解くと定義したか・何を捨てたか・なぜ
     ├── demo/              # 雑でよい。動けば勝ち
-    └── retro.md           # 5行固定
+    ├── retro.md           # 5行固定
+    └── notes.md           # 自由記述（任意）。思想・経緯・捨てたアイデアを漏れなく
 ```
 
 ## 1日の流れ

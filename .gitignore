@@ -6,3 +6,6 @@ __pycache__/
 .env
 .env.*
 .DS_Store
+
+# .claude は独自gitリポジトリのためルートでは追跡しない
+.claude/
