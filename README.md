@@ -1,0 +1,67 @@
+# Solution Sprint
+
+曖昧な課題の定義 → 1日でデモ、を反復する自主訓練。**コードは捨てる、判断は残す。**
+
+## 目的
+
+「曖昧さの中の初速」を鍛える。
+
+- 課題の自己定義（曖昧なまま提示される場面）
+- 速度と反復（作り込まず、動くものを早く出して直す）
+- ビジネス視点（技術の言葉を使わずに価値を語る）
+- 評価に晒される耐性（週1の低リスク暴露）
+
+## 構成
+
+```
+solution-sprint/
+├── docs/
+│   ├── tasks/             # タスク計画・記録（完了後 done/ へ）
+│   └── themes.md          # Sprintテーマ候補のストック
+├── templates/sprint/      # 各mdの見出し雛形（Sprint開始時にコピー）
+├── packages/              # ※作らない。重複が2回出てから初めて抽出
+└── NN-YYYYMMDD-産業-課題/  # Sprint本体（ルート直下）
+    ├── brief.md           # 架空クライアントの依頼文（曖昧なまま書く）
+    ├── research.md        # 情報源・現場理解のメモ
+    ├── decision.md        # 冒頭にPR-FAQ 5行 → 何を解くと定義したか・何を捨てたか・なぜ
+    ├── demo/              # 雑でよい。動けば勝ち
+    └── retro.md           # 5行固定
+```
+
+## 1日の流れ
+
+1. **brief**：架空クライアントの依頼を曖昧なまま書く
+2. **PR-FAQ**：成功時の架空プレスリリースを5行、技術用語禁止で（decision.md冒頭）
+3. **research → decision**：午前中に課題定義を締める。雑な定量化を含める
+4. **demo**：午後で動くものを作る。スコープは時間に合わせて削る（appetite固定）
+5. **1人テスト**：5分見せて「これ何のツールか分かる？使う？」→ retroに1行
+6. **強制終了**：状態がどうであれ当日commitで閉じる。未完成は失敗ではなく計測データ
+
+## demo起動手順（コードは共有しない。手順のみ固定）
+
+```bash
+# Sprint開始（テンプレートをコピー）
+cp -r templates/sprint NN-YYYYMMDD-産業-課題
+
+# frontend: Next.js (TypeScript)
+cd NN-YYYYMMDD-産業-課題/demo
+npx create-next-app@latest web --ts --app --no-eslint --use-npm
+
+# backend: FastAPI
+uv init api && cd api && uv add fastapi 'uvicorn[standard]'
+uv run uvicorn main:app --reload --port 8000
+```
+
+## 規律（罠と対策）
+
+| 罠 | 対策 |
+|---|---|
+| 共通基盤を先に整備し始める | 抽出は重複が2回現れてから |
+| 「あと1日あれば見栄えが」 | フォルダ名に日付、当日commitで機械的に締める |
+| 見せ物としてコードを磨く | 見せ物は decision.md と retro.md |
+| 手法を増やして儀式化する | 部品追加は4〜5本回してretroに証拠が溜まってから |
+| 1スプリント1ブログ | ブログは4〜5本後に総括1本のみ |
+
+## 運用
+
+- 週1本、4〜5本回したら retro.md を並べて総括ブログ1本（Zenn想定）
