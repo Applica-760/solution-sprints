@@ -9,3 +9,6 @@ __pycache__/
 
 # .claude は独自gitリポジトリのためルートでは追跡しない
 .claude/
+
+# Sprint demoの取得データ・スナップショット（JNIOSH規約によりデータは配布せず、コードのみ）
+**/demo/**/data/

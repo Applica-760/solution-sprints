@@ -1,0 +1,27 @@
+/* demo用の最小スタイル。OSのダーク設定に依らず固定の明色スキームにする
+   （ページ側はインラインstyleで明色前提のため）。 */
+html {
+  color-scheme: light;
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  color: #171717;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
