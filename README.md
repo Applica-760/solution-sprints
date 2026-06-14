@@ -9,7 +9,6 @@
 - 課題の自己定義（曖昧なまま提示される場面）
 - 速度と反復（作り込まず、動くものを早く出して直す）
 - ビジネス視点（技術の言葉を使わずに価値を語る）
-- 評価に晒される耐性（週1の低リスク暴露）
 
 ## 構成
 
@@ -38,20 +37,6 @@ solution-sprint/
 5. **1人テスト**：5分見せて「これ何のツールか分かる？使う？」→ retroに1行
 6. **強制終了**：状態がどうであれ当日commitで閉じる。未完成は失敗ではなく計測データ
 
-## demo起動手順（コードは共有しない。手順のみ固定）
-
-```bash
-# Sprint開始（テンプレートをコピー）
-cp -r templates/sprint NN-YYYYMMDD-産業-課題
-
-# frontend: Next.js (TypeScript)
-cd NN-YYYYMMDD-産業-課題/demo
-npx create-next-app@latest web --ts --app --no-eslint --use-npm
-
-# backend: FastAPI
-uv init api && cd api && uv add fastapi 'uvicorn[standard]'
-uv run uvicorn main:app --reload --port 8000
-```
 
 ## 規律（罠と対策）
 
