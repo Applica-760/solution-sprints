@@ -15,8 +15,9 @@
 ```
 solution-sprint/
 ├── docs/
-│   ├── tasks/             # タスク計画・記録（完了後 done/ へ）
-│   └── themes.md          # Sprintテーマ候補のストック
+│   ├── themes.md          # Sprintテーマ候補のストック
+│   ├── tasks/             # Sprint外のタスク計画・記録（完了後 done/ へ）
+│   └── issues/            # issue記録（issue-log skill。必要時に生成）
 ├── templates/sprint/      # 各mdの見出し雛形（Sprint開始時にコピー）
 ├── packages/              # ※作らない。重複が2回出てから初めて抽出
 └── NN-YYYYMMDD-産業-課題/  # Sprint本体（ルート直下）
@@ -24,6 +25,7 @@ solution-sprint/
     ├── research.md        # 情報源・現場理解のメモ
     ├── decision.md        # 冒頭にPR-FAQ 5行 → 何を解くと定義したか・何を捨てたか・なぜ
     ├── demo/              # 雑でよい。動けば勝ち
+    ├── tasks/             # このSprintのタスク計画・記録（完了後 done/ へ）
     ├── retro.md           # 5行固定
     └── notes.md           # 自由記述（任意）。思想・経緯・捨てたアイデアを漏れなく
 ```
